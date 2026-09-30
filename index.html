@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marlystetic | Centro de estética en Alcalá de Henares</title>
+<meta name="description" content="Marlystetic es un centro de estética en Alcalá de Henares, Distrito V. Masajes postquirúrgicos, maderoterapia, presoterapia, faciales, microblading, depilación, manicura y pedicura. Más de 12 años de experiencia.">
+<meta name="theme-color" content="#faf7f4">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23faf7f4'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23b8797a' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --marfil:#faf7f4;
+  --hueso:#f5efe9;
+  --carbon:#2b2523;
+  --gris:#6f6460;
+  --rosa:#c98b8b;
+  --rosa-hondo:#b8797a;
+  --oro:#c9a227;
+  --blanco:#fffdfb;
+  --linea:rgba(43,37,35,.10);
+  --sombra:0 18px 40px -28px rgba(43,37,35,.35);
+  --serif:'Cormorant Garamond',Didot,Georgia,serif;
+  --sans:'Inter',-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--marfil);
+  color:var(--carbon);
+  font-family:var(--sans);
+  font-size:17px;
+  font-weight:300;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.12;margin:0;letter-spacing:.005em}
+h1{font-size:clamp(3.1rem,9vw,6.4rem)}
+h2{font-size:clamp(2.1rem,4.6vw,3.2rem)}
+h3{font-size:clamp(1.35rem,2.2vw,1.6rem)}
+p{margin:0 0 1em}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 22px}
+.narrow{max-width:760px;margin:0 auto}
+section{padding:clamp(64px,10vw,118px) 0}
+.eyebrow{
+  font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--rosa-hondo);margin:0 0 18px;
+}
+.lead{font-size:1.08rem;color:var(--gris);max-width:56ch}
+.rule{width:56px;height:1px;background:var(--rosa);opacity:.55;margin:26px 0}
+.center{text-align:center}
+.center .rule{margin:26px auto}
+.center .lead{margin-left:auto;margin-right:auto}
+
+/* botones */
+.btn{
+  display:inline-flex;align-items:center;gap:.55em;
+  font-family:var(--sans);font-size:.86rem;font-weight:500;letter-spacing:.06em;
+  text-transform:uppercase;padding:15px 30px;border-radius:999px;border:1px solid transparent;
+  cursor:pointer;transition:transform .35s ease,box-shadow .35s ease,background .35s ease,color .35s ease,border-color .35s ease;
+}
+.btn-solido{background:var(--carbon);color:var(--marfil);box-shadow:var(--sombra)}
+.btn-solido:hover{background:var(--rosa-hondo);transform:translateY(-2px)}
+.btn-borde{border-color:var(--linea);background:transparent;color:var(--carbon)}
+.btn-borde:hover{border-color:var(--rosa);color:var(--rosa-hondo);transform:translateY(-2px)}
+
+/* cabecera */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  padding:16px 0;transition:background .4s ease,box-shadow .4s ease,padding .4s ease;
+  background:rgba(250,247,244,0);backdrop-filter:blur(0px);
+}
+header.fijo{background:rgba(250,247,244,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--linea);padding:11px 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.marca{font-family:var(--serif);font-size:1.62rem;letter-spacing:.045em;line-height:1}
+.marca span{display:block;font-family:var(--sans);font-size:.55rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gris);margin-top:5px}
+.menu{display:flex;align-items:center;gap:30px}
+.menu a{font-size:.83rem;letter-spacing:.09em;text-transform:uppercase;color:var(--gris);position:relative;padding-bottom:3px}
+.menu a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--rosa);transition:right .35s ease}
+.menu a:hover{color:var(--carbon)}
+.menu a:hover::after{right:0}
+.menu .btn{padding:12px 24px}
+.hamb{display:none;background:none;border:1px solid var(--linea);border-radius:999px;padding:10px 14px;cursor:pointer}
+.hamb span{display:block;width:20px;height:1.5px;background:var(--carbon);margin:4px 0;transition:.3s}
+.panel{display:none;background:var(--blanco);border-top:1px solid var(--linea);margin-top:12px}
+.panel.abierto{display:block}
+.panel a{display:block;padding:15px 22px;border-bottom:1px solid var(--linea);font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gris)}
+
+/* portada */
+.hero{
+  min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;
+  padding:150px 0 90px;
+  background:
+    radial-gradient(58% 46% at 82% 14%, rgba(201,139,139,.20) 0%, rgba(201,139,139,0) 70%),
+    radial-gradient(46% 40% at 8% 82%, rgba(201,162,39,.13) 0%, rgba(201,162,39,0) 72%),
+    linear-gradient(180deg,var(--marfil) 0%,var(--hueso) 100%);
+}
+.hero-deco{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-deco svg{position:absolute}
+.deco-aro{right:-90px;top:9%;width:min(560px,72vw);opacity:.5}
+.deco-hoja{left:-70px;bottom:4%;width:min(420px,60vw);opacity:.38}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{line-height:.94}
+.hero h1 em{font-style:italic;color:var(--rosa-hondo)}
+.hero-sub{font-family:var(--serif);font-size:clamp(1.15rem,2.3vw,1.6rem);color:var(--gris);margin:22px 0 0}
+.hero-txt{max-width:47ch;margin-top:26px;color:var(--gris)}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.hero-mini{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:52px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
+.hero-mini i{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--rosa);vertical-align:middle;margin-right:10px}
+
+/* datos */
+.datos{background:var(--carbon);color:var(--hueso);padding:0}
+.datos .grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.datos .c{padding:46px 26px;text-align:center;border-right:1px solid rgba(245,239,233,.14)}
+.datos .c:last-child{border-right:none}
+.datos .n{font-family:var(--serif);font-size:clamp(2.3rem,5vw,3.3rem);line-height:1;color:#fff}
+.datos .t{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,239,233,.62);margin-top:12px}
+
+/* servicios */
+.servicios{background:var(--marfil)}
+.rejilla{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.tarjeta{
+  background:var(--blanco);border:1px solid var(--linea);border-radius:20px;padding:34px 30px 30px;
+  transition:transform .45s ease,box-shadow .45s ease,border-color .45s ease;
+}
+.tarjeta:hover{transform:translateY(-5px);box-shadow:var(--sombra);border-color:rgba(201,139,139,.35)}
+.ico{width:44px;height:44px;border-radius:14px;background:var(--hueso);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.ico svg{width:22px;height:22px;stroke:var(--rosa-hondo);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.tarjeta h3{margin-bottom:10px}
+.tarjeta p{font-size:.94rem;color:var(--gris);margin:0}
+.chips{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{font-size:.74rem;letter-spacing:.05em;color:var(--gris);background:var(--hueso);border-radius:999px;padding:5px 13px}
+
+/* especialidad */
+.especial{background:linear-gradient(180deg,var(--hueso) 0%,var(--marfil) 100%);position:relative;overflow:hidden}
+.especial .bloque{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.especial .caja{
+  background:var(--blanco);border-radius:24px;padding:44px 40px;border:1px solid var(--linea);
+  box-shadow:var(--sombra);
+}
+.especial .caja h3{font-size:1.5rem;margin-bottom:14px}
+.especial ul{list-style:none;padding:0;margin:24px 0 0}
+.especial li{padding:15px 0 15px 30px;border-top:1px solid var(--linea);position:relative;font-size:.94rem;color:var(--gris)}
+.especial li:last-child{border-bottom:1px solid var(--linea)}
+.especial li::before{content:"";position:absolute;left:4px;top:24px;width:6px;height:6px;border-radius:50%;background:var(--rosa)}
+.aviso{font-size:.82rem;color:var(--gris);font-style:italic;margin-top:22px;padding-left:14px;border-left:2px solid rgba(201,162,39,.5)}
+
+/* el centro */
+.centro .bloque{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.lista-b{list-style:none;padding:0;margin:30px 0 0}
+.lista-b li{position:relative;padding:0 0 20px 34px;color:var(--gris);font-size:.96rem}
+.lista-b li::before{
+  content:"";position:absolute;left:0;top:9px;width:16px;height:16px;border-radius:50%;
+  border:1px solid var(--rosa);background:radial-gradient(circle at 50% 50%,rgba(201,139,139,.35) 0%,rgba(201,139,139,0) 62%);
+}
+.panel-deco{
+  border-radius:26px;border:1px solid var(--linea);overflow:hidden;position:relative;
+  aspect-ratio:4/5;
+  background:
+    radial-gradient(70% 55% at 24% 18%, rgba(201,139,139,.30) 0%, rgba(201,139,139,0) 68%),
+    radial-gradient(60% 50% at 84% 88%, rgba(201,162,39,.20) 0%, rgba(201,162,39,0) 70%),
+    linear-gradient(160deg,var(--blanco) 0%,var(--hueso) 100%);
+  display:flex;align-items:center;justify-content:center;
+}
+.panel-deco svg{width:62%;opacity:.55}
+
+/* opiniones */
+.opiniones{background:var(--hueso)}
+.rej-op{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:56px}
+.cita{
+  background:var(--blanco);border:1px solid var(--linea);border-radius:20px;padding:34px 32px;
+  display:flex;flex-direction:column;gap:16px;
+}
+.estrellas{color:var(--oro);letter-spacing:.18em;font-size:.85rem}
+.cita blockquote{margin:0;font-family:var(--serif);font-size:1.2rem;line-height:1.5;color:var(--carbon)}
+.cita .autor{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gris);margin-top:auto}
+.nota-google{display:inline-flex;align-items:center;gap:12px;margin-top:40px;font-size:.85rem;color:var(--gris)}
+.nota-google b{font-family:var(--serif);font-size:1.5rem;color:var(--carbon);font-weight:500}
+
+/* cita */
+.cita-sec{background:var(--marfil)}
+.form-rej{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+form{background:var(--blanco);border:1px solid var(--linea);border-radius:22px;padding:34px 30px;box-shadow:var(--sombra)}
+.fila{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);margin:0 0 7px}
+input,select,textarea{
+  width:100%;font-family:var(--sans);font-size:.95rem;font-weight:300;color:var(--carbon);
+  background:var(--marfil);border:1px solid var(--linea);border-radius:12px;padding:13px 15px;
+  transition:border-color .3s ease,background .3s ease;margin-bottom:18px;
+}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--rosa);background:#fff}
+textarea{resize:vertical;min-height:110px}
+form .btn{width:100%;justify-content:center}
+.nota-form{font-size:.78rem;color:var(--gris);margin:14px 0 0;text-align:center}
+.aviso-ok{display:none;background:rgba(201,139,139,.12);border:1px solid rgba(201,139,139,.4);border-radius:14px;padding:16px 18px;font-size:.9rem;margin-bottom:18px}
+.aviso-ok.ver{display:block}
+.canales{display:grid;gap:14px;margin-top:30px}
+.canal{
+  display:flex;align-items:center;gap:16px;background:var(--blanco);border:1px solid var(--linea);
+  border-radius:18px;padding:20px 22px;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;
+}
+.canal:hover{transform:translateY(-3px);box-shadow:var(--sombra);border-color:rgba(201,139,139,.4)}
+.canal .ci{width:42px;height:42px;flex:0 0 42px;border-radius:13px;background:var(--hueso);display:flex;align-items:center;justify-content:center}
+.canal .ci svg{width:20px;height:20px;stroke:var(--rosa-hondo);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.canal b{display:block;font-family:var(--serif);font-size:1.22rem;font-weight:500;line-height:1.2}
+.canal small{display:block;color:var(--gris);font-size:.8rem;letter-spacing:.04em}
+.mini-nota{font-size:.85rem;color:var(--gris);margin-top:26px;padding-left:16px;border-left:2px solid rgba(201,139,139,.5)}
+
+/* ubicación */
+.ubicacion{background:linear-gradient(180deg,var(--marfil) 0%,var(--hueso) 100%)}
+.ubi-rej{display:grid;grid-template-columns:1fr 1.15fr;gap:50px;align-items:stretch;margin-top:50px}
+.mapa{border-radius:22px;overflow:hidden;border:1px solid var(--linea);min-height:380px;background:var(--hueso)}
+.mapa iframe{width:100%;height:100%;min-height:380px;border:0;display:block;filter:saturate(.82)}
+.dato{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--linea)}
+.dato:first-of-type{border-top:1px solid var(--linea)}
+.dato .di{width:38px;flex:0 0 38px;color:var(--rosa-hondo)}
+.dato .di svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.dato b{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gris);font-weight:500;margin-bottom:3px}
+.dato a{padding:1px 0;border-bottom:1px solid transparent}
+.dato a:hover{border-color:var(--rosa)}
+.horario{margin-top:28px}
+.horario h4{font-size:1.15rem;margin-bottom:14px}
+.horario .h{display:flex;justify-content:space-between;gap:14px;font-size:.9rem;color:var(--gris);padding:9px 0;border-bottom:1px dashed var(--linea)}
+.horario .h b{color:var(--carbon);font-weight:400}
+
+/* pie */
+footer{background:var(--carbon);color:rgba(245,239,233,.75);padding:60px 0 44px;font-size:.88rem}
+footer .f-top{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;align-items:flex-start;padding-bottom:30px;border-bottom:1px solid rgba(245,239,233,.14)}
+footer .marca{color:#fff}
+footer .marca span{color:rgba(245,239,233,.55)}
+footer .f-links{display:flex;flex-wrap:wrap;gap:22px}
+footer a:hover{color:#fff}
+footer .f-bottom{padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:.79rem;color:rgba(245,239,233,.5)}
+footer .f-bottom strong{font-weight:500;color:rgba(245,239,233,.78)}
+
+/* whatsapp flotante */
+.wsp{
+  position:fixed;right:20px;bottom:20px;z-index:80;display:inline-flex;align-items:center;gap:10px;
+  background:var(--rosa-hondo);color:#fff;border-radius:999px;padding:13px 20px 13px 15px;
+  box-shadow:0 14px 30px -12px rgba(184,121,122,.75);transition:transform .35s ease,background .35s ease;
+  font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;
+}
+.wsp:hover{transform:translateY(-3px);background:var(--carbon)}
+.wsp svg{width:20px;height:20px;fill:currentColor}
+
+/* aparición al hacer scroll */
+.ap{opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.22,.7,.28,1),transform .85s cubic-bezier(.22,.7,.28,1)}
+.ap.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .ap{opacity:1;transform:none;transition:none}
+  *{transition-duration:.01ms!important;animation-duration:.01ms!important}
+}
+
+/* nada se sale de la pantalla */
+.rejilla>*, .datos .grid>*, .rej-op>*, .especial .bloque>*, .centro .bloque>*, .form-rej>*, .ubi-rej>*, .fila>*{min-width:0}
+img,svg,video,table,iframe{max-width:100%}
+p,li,td,th,h1,h2,h3,h4,a,input,select,textarea{overflow-wrap:anywhere}
+
+/* móvil */
+@media (max-width:1000px){
+  .especial .bloque,.centro .bloque,.form-rej,.ubi-rej{grid-template-columns:1fr;gap:40px}
+  .rejilla{grid-template-columns:repeat(2,1fr)}
+  .rej-op{grid-template-columns:1fr}
+  .panel-deco{aspect-ratio:16/11;max-width:520px}
+}
+@media (max-width:760px){
+  body{font-size:16px;line-height:1.7}
+  .menu{display:none}
+  .hamb{display:block}
+  .rejilla{grid-template-columns:repeat(2,1fr);gap:14px}
+  .tarjeta{padding:24px 20px;border-radius:16px}
+  .tarjeta h3{font-size:1.15rem}
+  .tarjeta p{font-size:.86rem}
+  .ico{width:38px;height:38px;border-radius:12px;margin-bottom:14px}
+  .chips li{font-size:.68rem;padding:4px 10px}
+  .datos .grid{grid-template-columns:1fr}
+  .datos .c{border-right:none;border-bottom:1px solid rgba(245,239,233,.14);padding:32px 20px}
+  .datos .c:last-child{border-bottom:none}
+  .fila{grid-template-columns:1fr}
+  .hero{padding:126px 0 76px;min-height:auto}
+  .hero-txt{font-size:1rem}
+  .hero-btns .btn{flex:1 1 100%;justify-content:center}
+  .hero-mini{gap:8px 18px;font-size:.72rem}
+  .especial .caja{padding:32px 24px}
+  form{padding:26px 20px}
+  .wsp{right:14px;bottom:14px;padding:12px 17px 12px 13px}
+  .wsp span{display:none}
+  .wsp svg{width:22px;height:22px}
+  footer{padding:46px 0 36px}
+}
+</style>
+</head>
+<body>
+
+<header id="cabecera">
+  <div class="wrap">
+    <div class="nav">
+      <a href="#arriba" class="marca">Marlystetic<span>Imagen y belleza</span></a>
+      <nav class="menu" aria-label="Menú principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#centro">Centro</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#contacto" class="btn btn-solido">Pedir cita</a>
+      </nav>
+      <button class="hamb" id="hamb" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <div class="panel" id="panel">
+      <a href="#servicios">Servicios</a>
+      <a href="#centro">Centro</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#contacto">Pedir cita</a>
+    </div>
+  </div>
+</header>
+
+<main id="arriba">
+
+  <!-- PORTADA -->
+  <section class="hero">
+    <div class="hero-deco" aria-hidden="true">
+      <svg class="deco-aro" viewBox="0 0 400 400"><circle cx="200" cy="200" r="150" fill="none" stroke="#c98b8b" stroke-width=".7"/><circle cx="200" cy="200" r="108" fill="none" stroke="#c9a227" stroke-width=".6"/><circle cx="200" cy="200" r="66" fill="none" stroke="#c98b8b" stroke-width=".5"/></svg>
+      <svg class="deco-hoja" viewBox="0 0 300 300"><path d="M20 280C70 200 130 120 260 30" fill="none" stroke="#b8797a" stroke-width=".8"/><path d="M120 175c-22-30-24-56-16-78 26 10 44 32 46 62z" fill="none" stroke="#b8797a" stroke-width=".7"/><path d="M175 120c-16-32-12-58 2-78 24 14 38 40 34 70z" fill="none" stroke="#c9a227" stroke-width=".7"/><path d="M80 235c-26-24-34-50-32-74 28 6 50 24 58 52z" fill="none" stroke="#c9a227" stroke-width=".7"/></svg>
+    </div>
+    <div class="wrap">
+      <p class="eyebrow ap">Centro de estética</p>
+      <h1 class="ap">Marlystetic<br><em>Alcalá de Henares</em></h1>
+      <p class="hero-sub ap">Cuidamos tu piel y tu cuerpo con tratamientos hechos a tu medida</p>
+      <p class="hero-txt ap">Aquí no hay sesiones en cadena ni prisas. Te escuchamos, valoramos qué necesita tu piel y te proponemos un plan honesto. El rato que te dedicas, en buenas manos.</p>
+      <div class="hero-btns ap">
+        <a href="#contacto" class="btn btn-solido">Pedir cita</a>
+        <a href="#servicios" class="btn btn-borde">Ver servicios</a>
+      </div>
+      <div class="hero-mini ap">
+        <span><i></i>Calle Lope de Rueda, 7</span>
+        <span><i></i>Más de 12 años de experiencia</span>
+        <span><i></i>4,7 sobre 5 en Google</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATOS -->
+  <section class="datos" style="padding:0">
+    <div class="wrap" style="padding:0">
+      <div class="grid">
+        <div class="c ap"><div class="n">4,7</div><div class="t">Valoración en Google</div></div>
+        <div class="c ap"><div class="n">+130</div><div class="t">Reseñas de clientas y clientes</div></div>
+        <div class="c ap"><div class="n">+12</div><div class="t">Años de experiencia</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="servicios" id="servicios">
+    <div class="wrap">
+      <div class="narrow center ap">
+        <p class="eyebrow">Servicios</p>
+        <h2>Todo lo que hacemos, en un mismo centro</h2>
+        <div class="rule"></div>
+        <p class="lead">Trabajamos cuerpo, rostro y manos. Puedes venir por un tratamiento suelto o combinar varios en la misma visita, siempre con cita previa.</p>
+      </div>
+      <div class="rejilla">
+
+        <article class="tarjeta ap">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.4-7 10-7 10z"/></svg></div>
+          <h3>Tratamientos corporales</h3>
+          <p>Maderoterapia, presoterapia y trabajo corporal para activar la circulación y remodelar. Sesiones adaptadas a cómo te encuentres ese día.</p>
+          <ul class="chips"><li>Maderoterapia</li><li>Presoterapia</li><li>Cuerpo</li></ul>
+        </article>
+
+        <article class="tarjeta ap">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M9 11h.01M15 11h.01M9.5 15c1.6 1.2 3.4 1.2 5 0"/></svg></div>
+          <h3>Faciales y cuidado de la piel</h3>
+          <p>Limpieza facial, tratamiento facial, dermaplaning y microdermoabrasión. Empezamos mirando tu piel para decidir qué le viene bien.</p>
+          <ul class="chips"><li>Limpieza facial</li><li>Dermaplaning</li><li>Microdermoabrasión</li></ul>
+        </article>
+
+        <article class="tarjeta ap">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 14c4-6 6-8 9-8s5 2 9 8"/><path d="M5 17c3-2 5-3 7-3s4 1 7 3"/></svg></div>
+          <h3>Cejas y microblading</h3>
+          <p>Diseñamos la ceja según tu rostro: perfilado, tinte y microblading para quien busca un trazo más definido y duradero.</p>
+          <ul class="chips"><li>Perfilado</li><li>Microblading</li><li>Cejas y pestañas</li></ul>
+        </article>
+
+        <article class="tarjeta ap">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 10l7-7 7 7"/></svg></div>
+          <h3>Depilación con cera e hilo</h3>
+          <p>Cera e hilo, tú eliges. El hilo nos gusta especialmente para el vello facial y las cejas, porque es rápido y muy preciso.</p>
+          <ul class="chips"><li>Cera</li><li>Hilo</li><li>Facial</li></ul>
+        </article>
+
+        <article class="tarjeta ap">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M8 13V5.5a1.5 1.5 0 013 0V11m0-1.5a1.5 1.5 0 013 0V12m0-1a1.5 1.5 0 013 0v4a6 6 0 01-6 6H10a5 5 0 01-5-5v-4a1.5 1.5 0 013 0"/></svg></div>
+          <h3>Manos y pies</h3>
+          <p>Manicura, pedicura y esmalte de uñas. Cuidamos también la piel de las manos, que es la que más acusa el paso del tiempo.</p>
+          <ul class="chips"><li>Manicura</li><li>Pedicura</li><li>Esmalte</li></ul>
+        </article>
+
+        <article class="tarjeta ap">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l2.4 5.2 5.6.7-4.1 3.9 1 5.6L12 15.8 7.1 18.4l1-5.6L4 8.9l5.6-.7z"/></svg></div>
+          <h3>Maquillaje y pelo</h3>
+          <p>Maquillaje para el día a día o para una ocasión concreta, además de tinte y extensiones de pelo para completar el look.</p>
+          <ul class="chips"><li>Maquillaje</li><li>Tinte</li><li>Extensiones</li></ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ESPECIALIDAD -->
+  <section class="especial" id="especialidad">
+    <div class="wrap">
+      <div class="bloque">
+        <div class="ap">
+          <p class="eyebrow">Nuestra especialidad</p>
+          <h2>Masajes postquirúrgicos</h2>
+          <div class="rule"></div>
+          <p class="lead">Es el tratamiento por el que más nos conocen en Alcalá de Henares, y es el que hacemos con más cuidado.</p>
+          <p style="color:var(--gris);font-size:.96rem">Después de una cirugía el cuerpo pide tiempo y manos suaves. Trabajamos la zona con masaje y drenaje para que la recuperación sea lo más llevadera posible, revisando cada sesión cómo te has sentido y ajustando la presión.</p>
+          <p style="color:var(--gris);font-size:.96rem">A la maderoterapia y a la presoterapia les damos el mismo trato: primero entender qué necesitas, después empezar.</p>
+        </div>
+        <div class="caja ap">
+          <h3>Cómo lo trabajamos</h3>
+          <ul>
+            <li>Valoración inicial en la primera visita: qué te han hecho, cuándo y cómo estás ahora.</li>
+            <li>Sesiones suaves, sin forzar, adaptadas a la fase en la que te encuentres.</li>
+            <li>Trabajo combinado de masaje, drenaje y presoterapia cuando encaja.</li>
+            <li>Seguimiento de tu evolución visita a visita.</li>
+          </ul>
+          <p class="aviso">El masaje postquirúrgico acompaña la recuperación, no la sustituye. Siempre partimos de las indicaciones de tu médico o cirujano, y no prometemos resultados: cada cuerpo responde a su ritmo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL CENTRO -->
+  <section class="centro" id="centro">
+    <div class="wrap">
+      <div class="bloque">
+        <div class="panel-deco ap" aria-hidden="true">
+          <svg viewBox="0 0 300 300">
+            <circle cx="150" cy="150" r="104" fill="none" stroke="#b8797a" stroke-width=".7"/>
+            <circle cx="150" cy="150" r="70" fill="none" stroke="#c9a227" stroke-width=".6"/>
+            <path d="M150 46c-30 26-46 60-46 104s16 78 46 104" fill="none" stroke="#b8797a" stroke-width=".8"/>
+            <path d="M150 46c30 26 46 60 46 104s-16 78-46 104" fill="none" stroke="#c9a227" stroke-width=".8"/>
+            <path d="M56 150h188" fill="none" stroke="#c98b8b" stroke-width=".6"/>
+          </svg>
+        </div>
+        <div class="ap">
+          <p class="eyebrow">El centro</p>
+          <h2>Un centro pequeño, con trato de tú a tú</h2>
+          <div class="rule"></div>
+          <p class="lead">Estamos en el Distrito V de Alcalá de Henares, en la calle Lope de Rueda. Somos un centro de estética, no una peluquería: aquí el tiempo se dedica a la piel y al cuerpo.</p>
+          <ul class="lista-b">
+            <li><b>Aparatología propia</b> y tratamientos que elegimos según lo que necesita cada piel, no según lo que toque vender.</li>
+            <li><b>Atención uno a uno.</b> Se dedica el tiempo que el tratamiento pide, sin prisas y sin solapar clientas.</li>
+            <li><b>Asesoramiento real.</b> Si algo no te conviene, te lo decimos, y si necesitas menos sesiones, también.</li>
+            <li><b>Más de 12 años</b> acompañando a vecinas y vecinos del barrio, con clientes que repiten y traen a los suyos.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIONES -->
+  <section class="opiniones" id="opiniones">
+    <div class="wrap">
+      <div class="narrow center ap">
+        <p class="eyebrow">Opiniones</p>
+        <h2>Lo que cuentan de nosotras</h2>
+        <div class="rule"></div>
+        <p class="lead">Estas son reseñas reales publicadas en Google por personas que han pasado por el centro.</p>
+      </div>
+      <div class="rej-op">
+        <article class="cita ap">
+          <div class="estrellas">5,0</div>
+          <blockquote>Superó mis expectativas. Estoy feliz, los resultados son casi inmediatos: una piel tersa, luminosa y llena de vida. El trato, encantador.</blockquote>
+          <div class="autor">Rosalba P. · Google</div>
+        </article>
+        <article class="cita ap">
+          <div class="estrellas">5,0</div>
+          <blockquote>Es un centro dirigido por una gran profesional que te asesora en función de lo que realmente necesitas. Dedica el tiempo que tu tratamiento requiere, sin prisas, con esmero, calidad y delicadeza.</blockquote>
+          <div class="autor">María Luisa G. · Google</div>
+        </article>
+        <article class="cita ap">
+          <div class="estrellas">5,0</div>
+          <blockquote>Soy paciente desde hace un año y estoy encantado con su trabajo y su amabilidad. Puedes hablar con ella con total confianza: te escucha, te recomienda y siempre te anima.</blockquote>
+          <div class="autor">Álvaro M. · Google</div>
+        </article>
+        <article class="cita ap">
+          <div class="estrellas">5,0</div>
+          <blockquote>Un centro cuidado y con múltiples tratamientos. Las profesionales informan con detalle de todo lo que ofrecen.</blockquote>
+          <div class="autor">Juan T. · Google</div>
+        </article>
+      </div>
+      <div class="center">
+        <span class="nota-google ap"><b>4,7</b> sobre 5 con más de 130 reseñas públicas</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CITA -->
+  <section class="cita-sec" id="contacto">
+    <div class="wrap">
+      <div class="narrow center ap">
+        <p class="eyebrow">Pedir cita</p>
+        <h2>Cuéntanos qué necesitas y te confirmamos</h2>
+        <div class="rule"></div>
+        <p class="lead">Rellena el formulario y te contestamos para cerrar día y hora. Si lo prefieres, puedes escribirnos directamente por WhatsApp o reservar desde el calendario.</p>
+      </div>
+
+      <div class="form-rej" style="margin-top:56px">
+        <div class="ap">
+          <form id="form-cita" novalidate>
+            <div class="aviso-ok" id="aviso-ok">Gracias, hemos recibido tu solicitud. Te escribimos en cuanto la veamos para confirmar el día.</div>
+            <div class="fila">
+              <div>
+                <label for="nombre">Tu nombre</label>
+                <input id="nombre" name="nombre" type="text" placeholder="Nombre y apellidos" required>
+              </div>
+              <div>
+                <label for="contacto-dato">Teléfono o email</label>
+                <input id="contacto-dato" name="contacto" type="text" placeholder="Cómo te avisamos" required>
+              </div>
+            </div>
+            <label for="servicio">Qué te apetece</label>
+            <select id="servicio" name="servicio">
+              <option>Masaje postquirúrgico</option>
+              <option>Maderoterapia</option>
+              <option>Presoterapia</option>
+              <option>Tratamiento corporal</option>
+              <option>Limpieza o tratamiento facial</option>
+              <option>Dermaplaning</option>
+              <option>Microblading</option>
+              <option>Cejas y pestañas</option>
+              <option>Depilación con cera o hilo</option>
+              <option>Manicura o pedicura</option>
+              <option>Maquillaje</option>
+              <option>Tinte o extensiones</option>
+              <option>Aún no lo sé, necesito asesoramiento</option>
+            </select>
+            <label for="dia">Día que te viene bien</label>
+            <input id="dia" name="dia" type="date">
+            <label for="mensaje">Algo que debamos saber</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos si es tu primera vez, si vienes de una operación o cualquier detalle que nos ayude."></textarea>
+            <button type="submit" class="btn btn-solido" id="btn-enviar">Enviar solicitud</button>
+            <p class="nota-form">Te contestamos lo antes posible en horario de apertura. Tus datos se usan solo para responderte.</p>
+          </form>
+        </div>
+
+        <div class="ap">
+          <h3 style="margin-bottom:8px">Reservar sin pasar por el formulario</h3>
+          <p style="color:var(--gris);font-size:.95rem">Si prefieres el camino corto, estos botones van directos al centro.</p>
+          <div class="canales">
+            <a class="canal" href="https://wa.me/34625288970" target="_blank" rel="noopener">
+              <span class="ci"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 01-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1121 11.5z"/><path d="M8.8 9.2c.3 1.9 2.1 3.7 4 4l1-.9 1.7.8-.3 1.2c-2 .5-4.7-1.5-5.8-4.2l1.2-.3z"/></svg></span>
+              <span><b>WhatsApp</b><small>625 28 89 70 · respuesta directa</small></span>
+            </a>
+            <a class="canal" href="tel:+34625288970">
+              <span class="ci"><svg viewBox="0 0 24 24"><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 005.5 5.5l1.5-2 4 1.5v3a1.6 1.6 0 01-1.8 1.6C11 18.2 5.8 13 5 5.3A1.6 1.6 0 016.5 3.5z"/></svg></span>
+              <span><b>Teléfono</b><small>625 28 89 70 · 911 54 31 81</small></span>
+            </a>
+            <a class="canal" href="https://www.fresha.com/es/lvp/marlystetic-calle-lope-de-rueda-alcala-de-henares-Bo0aVJ" target="_blank" rel="noopener">
+              <span class="ci"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3.5v3M16 3.5v3M8 14h3"/></svg></span>
+              <span><b>Calendario online</b><small>Elige día y hora tú misma en Fresha</small></span>
+            </a>
+          </div>
+          <p class="mini-nota">Cada solicitud que llega desde esta página queda registrada con su ficha de cliente y entra directamente en la agenda del centro. Las citas no se pierden entre llamadas ni mensajes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section class="ubicacion" id="ubicacion">
+    <div class="wrap">
+      <div class="narrow center ap">
+        <p class="eyebrow">Dónde estamos</p>
+        <h2>En el Distrito V, en pleno Alcalá</h2>
+        <div class="rule"></div>
+        <p class="lead">Calle Lope de Rueda, 7. Una calle tranquila, con el centro a un paso, y atendemos siempre con cita previa.</p>
+      </div>
+
+      <div class="ubi-rej">
+        <div class="ap">
+          <div class="dato">
+            <span class="di"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.2-6.5-10.5A6.5 6.5 0 0118.5 10.5C18.5 15.8 12 21 12 21z"/><circle cx="12" cy="10.3" r="2.4"/></svg></span>
+            <span><b>Dirección</b><a href="https://www.openstreetmap.org/?mlat=40.490094&amp;mlon=-3.359494#map=18/40.490094/-3.359494" target="_blank" rel="noopener">Calle Lope de Rueda, 7<br>28805 Alcalá de Henares (Madrid)</a></span>
+          </div>
+          <div class="dato">
+            <span class="di"><svg viewBox="0 0 24 24"><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 005.5 5.5l1.5-2 4 1.5v3a1.6 1.6 0 01-1.8 1.6C11 18.2 5.8 13 5 5.3A1.6 1.6 0 016.5 3.5z"/></svg></span>
+            <span><b>Teléfonos</b><a href="tel:+34625288970">625 28 89 70</a><br><a href="tel:+34911543181">911 54 31 81</a></span>
+          </div>
+          <div class="dato">
+            <span class="di"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7.5L12 13l8.5-5.5"/></svg></span>
+            <span><b>Email</b><a href="mailto:marlistetic@hotmail.es">marlistetic@hotmail.es</a></span>
+          </div>
+          <div class="horario">
+            <h4>Horario</h4>
+            <div class="h"><span>Lunes</span><b>Cerrado</b></div>
+            <div class="h"><span>Martes a viernes</span><b>10:00 a 13:30</b></div>
+            <div class="h"><span>Sábado</span><b>10:00 a 15:00</b></div>
+            <div class="h"><span>Domingo</span><b>Cerrado</b></div>
+          </div>
+        </div>
+        <div class="mapa ap">
+          <iframe title="Mapa de Marlystetic en Alcalá de Henares" loading="lazy"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-3.3635%2C40.4876%2C-3.3555%2C40.4926&amp;layer=mapnik&amp;marker=40.490094%2C-3.359494"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <a href="#arriba" class="marca">Marlystetic<span>Imagen y belleza</span></a>
+      <nav class="f-links" aria-label="Enlaces del pie">
+        <a href="#servicios">Servicios</a>
+        <a href="#centro">Centro</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#contacto">Pedir cita</a>
+        <a href="https://www.fresha.com/es/lvp/marlystetic-calle-lope-de-rueda-alcala-de-henares-Bo0aVJ" target="_blank" rel="noopener">Reservas</a>
+        <a href="https://www.facebook.com/centroesteticomarlystetic/" target="_blank" rel="noopener">Facebook</a>
+      </nav>
+    </div>
+    <div class="f-bottom">
+      <span>Calle Lope de Rueda, 7 · 28805 Alcalá de Henares (Madrid) · 625 28 89 70</span>
+      <span><strong>Propuesta de diseño de NEO Labs.</strong> Los datos de contacto, los servicios y las reseñas que aparecen en esta página son los reales del centro.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wsp" href="https://wa.me/34625288970" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp al 625 28 89 70">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.86.5 3.6 1.4 5.1L2 22.5l5.7-1.5c1.4.77 3 1.2 4.7 1.2h.01c5.43 0 9.84-4.4 9.84-9.84C22.25 6.4 17.47 2 12.04 2zm5.76 14.06c-.24.68-1.4 1.3-1.94 1.35-.5.05-.98.24-3.3-.7-2.78-1.1-4.53-3.94-4.67-4.12-.14-.19-1.1-1.47-1.1-2.8s.7-1.98.94-2.25c.25-.27.54-.34.72-.34l.52.01c.17.01.4-.06.62.47.24.56.8 1.95.87 2.1.07.13.12.29.02.47-.1.18-.15.29-.29.45l-.43.5c-.14.14-.29.29-.12.57.17.29.75 1.24 1.6 2 1.1.98 2.03 1.29 2.32 1.43.29.14.46.12.63-.07.17-.19.72-.84.92-1.13.19-.29.38-.24.64-.14.27.1 1.66.78 1.94.93.29.14.48.21.55.33.07.12.07.69-.17 1.36z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BeautySalon",
+  "name":"Marlystetic",
+  "description":"Centro de estética en Alcalá de Henares. Masajes postquirúrgicos, maderoterapia, presoterapia, tratamientos faciales, microblading, depilación, manicura y pedicura.",
+  "address":{"@type":"PostalAddress","streetAddress":"Calle Lope de Rueda, 7","postalCode":"28805","addressLocality":"Alcalá de Henares","addressRegion":"Madrid","addressCountry":"ES"},
+  "geo":{"@type":"GeoCoordinates","latitude":40.490094,"longitude":-3.359494},
+  "telephone":["+34625288970","+34911543181"],
+  "email":"marlistetic@hotmail.es",
+  "url":"https://neolabs-clientes.github.io/marlystetic/",
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"130"},
+  "sameAs":["https://www.facebook.com/centroesteticomarlystetic/","https://www.fresha.com/es/lvp/marlystetic-calle-lope-de-rueda-alcala-de-henares-Bo0aVJ"]
+}
+</script>
+
+<script>
+// Cabecera fija al hacer scroll
+(function(){
+  var h = document.getElementById('cabecera');
+  function upd(){ h.classList.toggle('fijo', window.scrollY > 40); }
+  upd(); window.addEventListener('scroll', upd, {passive:true});
+})();
+
+// Menu movil
+(function(){
+  var b = document.getElementById('hamb'), p = document.getElementById('panel');
+  b.addEventListener('click', function(){
+    var abierto = p.classList.toggle('abierto');
+    b.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+  });
+  p.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ p.classList.remove('abierto'); b.setAttribute('aria-expanded','false'); }
+  });
+})();
+
+// Aparicion al hacer scroll
+(function(){
+  var els = document.querySelectorAll('.ap');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('visible');}); return; }
+  var io = new IntersectionObserver(function(ent){
+    ent.forEach(function(en, i){
+      if(en.isIntersecting){
+        setTimeout(function(){ en.target.classList.add('visible'); }, Math.min(i*70, 320));
+        io.unobserve(en.target);
+      }
+    });
+  }, {rootMargin:'0px 0px -12% 0px', threshold:.12});
+  els.forEach(function(e){ io.observe(e); });
+})();
+
+// Formulario de cita. La direccion destino no queda escrita en el HTML.
+(function(){
+  var form = document.getElementById('form-cita');
+  var aviso = document.getElementById('aviso-ok');
+  var btn = document.getElementById('btn-enviar');
+  var DESTINO = atob('aG9sYUBuZW9sYWJzLm1l');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var nombre = form.nombre.value.trim();
+    var contacto = form.contacto.value.trim();
+    if(!nombre || !contacto){
+      if(!nombre){ form.nombre.focus(); } else { form.contacto.focus(); }
+      btn.textContent = 'Completa tu nombre y un contacto';
+      setTimeout(function(){ btn.textContent = 'Enviar solicitud'; }, 2600);
+      return;
+    }
+    var datos = {
+      nombre: nombre,
+      contacto: contacto,
+      servicio: form.servicio.value,
+      dia_preferido: form.dia.value || 'Sin preferencia',
+      mensaje: form.mensaje.value.trim() || 'Sin mensaje',
+      _subject: 'Solicitud de cita web: ' + nombre,
+      _template: 'table',
+      _captcha: 'false'
+    };
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+    fetch('https://formsubmit.co/ajax/' + DESTINO, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(datos)
+    })
+    .then(function(r){ return r.json().catch(function(){ return {}; }); })
+    .then(function(){
+      aviso.classList.add('ver');
+      form.reset();
+      btn.textContent = 'Solicitud enviada';
+      setTimeout(function(){
+        btn.disabled = false;
+        btn.textContent = 'Enviar otra solicitud';
+      }, 3200);
+    })
+    .catch(function(){
+      btn.disabled = false;
+      btn.textContent = 'No ha salido. Prueba por WhatsApp';
+      setTimeout(function(){ btn.textContent = 'Enviar solicitud'; }, 3600);
+    });
+  });
+})();
+</script>
+</body>
+</html>
