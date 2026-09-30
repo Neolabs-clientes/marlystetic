@@ -725,12 +725,19 @@ p,li,td,th,h1,h2,h3,h4,a,input,select,textarea{overflow-wrap:anywhere}
     };
     btn.textContent = 'Enviando...';
     btn.disabled = true;
+    enviar(datos, 0);
+  });
+
+  function enviar(datos, intento){
     fetch('https://formsubmit.co/ajax/' + DESTINO, {
       method: 'POST',
       headers: {'Content-Type':'application/json','Accept':'application/json'},
       body: JSON.stringify(datos)
     })
-    .then(function(r){ return r.json().catch(function(){ return {}; }); })
+    .then(function(r){
+      if(!r.ok){ throw new Error('HTTP ' + r.status); }
+      return r.json().catch(function(){ return {}; });
+    })
     .then(function(){
       aviso.classList.add('ver');
       form.reset();
@@ -741,11 +748,16 @@ p,li,td,th,h1,h2,h3,h4,a,input,select,textarea{overflow-wrap:anywhere}
       }, 3200);
     })
     .catch(function(){
+      // Un reintento antes de darse por vencido: el servicio a veces devuelve un error puntual.
+      if(intento < 1){
+        setTimeout(function(){ enviar(datos, intento + 1); }, 1600);
+        return;
+      }
       btn.disabled = false;
-      btn.textContent = 'No ha salido. Prueba por WhatsApp';
-      setTimeout(function(){ btn.textContent = 'Enviar solicitud'; }, 3600);
+      btn.innerHTML = 'No ha salido. Escribenos por WhatsApp';
+      setTimeout(function(){ btn.textContent = 'Enviar solicitud'; }, 5000);
     });
-  });
+  }
 })();
 </script>
 </body>
