@@ -199,6 +199,9 @@ form .btn{width:100%;justify-content:center}
 .nota-form{font-size:.78rem;color:var(--gris);margin:14px 0 0;text-align:center}
 .aviso-ok{display:none;background:rgba(201,139,139,.12);border:1px solid rgba(201,139,139,.4);border-radius:14px;padding:16px 18px;font-size:.9rem;margin-bottom:18px}
 .aviso-ok.ver{display:block}
+.fallback{display:none;font-size:.85rem;color:var(--gris);background:var(--hueso);border:1px solid var(--linea);border-radius:14px;padding:14px 16px;margin:16px 0 0;text-align:left}
+.fallback.ver{display:block}
+.fallback a{color:var(--rosa-hondo);border-bottom:1px solid rgba(184,121,122,.5)}
 .canales{display:grid;gap:14px;margin-top:30px}
 .canal{
   display:flex;align-items:center;gap:16px;background:var(--blanco);border:1px solid var(--linea);
@@ -551,6 +554,7 @@ p,li,td,th,h1,h2,h3,h4,a,input,select,textarea{overflow-wrap:anywhere}
             <label for="mensaje">Algo que debamos saber</label>
             <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos si es tu primera vez, si vienes de una operación o cualquier detalle que nos ayude."></textarea>
             <button type="submit" class="btn btn-solido" id="btn-enviar">Enviar solicitud</button>
+            <p class="fallback" id="fallback">El formulario no ha podido salir en este momento. Escríbenos directos y te atendemos igual: <a href="https://wa.me/34625288970" target="_blank" rel="noopener">WhatsApp 625 28 89 70</a> o llama al <a href="tel:+34911543181">911 54 31 81</a>.</p>
             <p class="nota-form">Te contestamos lo antes posible en horario de apertura. Tus datos se usan solo para responderte.</p>
           </form>
         </div>
@@ -754,7 +758,8 @@ p,li,td,th,h1,h2,h3,h4,a,input,select,textarea{overflow-wrap:anywhere}
         return;
       }
       btn.disabled = false;
-      btn.innerHTML = 'No ha salido. Escribenos por WhatsApp';
+      btn.textContent = 'No ha salido. Mira las opciones de abajo';
+      document.getElementById('fallback').classList.add('ver');
       setTimeout(function(){ btn.textContent = 'Enviar solicitud'; }, 5000);
     });
   }
