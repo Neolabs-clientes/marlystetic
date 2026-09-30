@@ -6,6 +6,15 @@
 <title>Marlystetic | Centro de estética en Alcalá de Henares</title>
 <meta name="description" content="Marlystetic es un centro de estética en Alcalá de Henares, Distrito V. Masajes postquirúrgicos, maderoterapia, presoterapia, faciales, microblading, depilación, manicura y pedicura. Más de 12 años de experiencia.">
 <meta name="theme-color" content="#faf7f4">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Marlystetic | Centro de estética en Alcalá de Henares">
+<meta property="og:description" content="Masajes postquirúrgicos, maderoterapia, faciales, microblading y mucho más. Centro de estética en el Distrito V de Alcalá de Henares. 4,7 sobre 5 en Google.">
+<meta property="og:url" content="https://neolabs-clientes.github.io/marlystetic/">
+<meta property="og:image" content="https://neolabs-clientes.github.io/marlystetic/img/og.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://neolabs-clientes.github.io/marlystetic/img/og.jpg">
+<link rel="preload" as="image" href="img/hero.jpg" fetchpriority="high">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23faf7f4'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23b8797a' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -96,14 +105,13 @@ header.fijo{background:rgba(250,247,244,.92);backdrop-filter:blur(12px);box-shad
   min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;
   padding:150px 0 90px;
   background:
-    radial-gradient(58% 46% at 82% 14%, rgba(201,139,139,.20) 0%, rgba(201,139,139,0) 70%),
-    radial-gradient(46% 40% at 8% 82%, rgba(201,162,39,.13) 0%, rgba(201,162,39,0) 72%),
+    linear-gradient(90deg, rgba(250,247,244,.97) 0%, rgba(250,247,244,.93) 40%, rgba(250,247,244,.66) 72%, rgba(250,247,244,.40) 100%),
+    url('img/hero.jpg') center 26%/cover no-repeat,
     linear-gradient(180deg,var(--marfil) 0%,var(--hueso) 100%);
 }
 .hero-deco{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 .hero-deco svg{position:absolute}
-.deco-aro{right:-90px;top:9%;width:min(560px,72vw);opacity:.5}
-.deco-hoja{left:-70px;bottom:4%;width:min(420px,60vw);opacity:.38}
+.deco-aro{right:-90px;top:9%;width:min(560px,72vw);opacity:.30}
 .hero .wrap{position:relative;z-index:2}
 .hero h1{line-height:.94}
 .hero h1 em{font-style:italic;color:var(--rosa-hondo)}
@@ -167,7 +175,16 @@ header.fijo{background:rgba(250,247,244,.92);backdrop-filter:blur(12px);box-shad
     linear-gradient(160deg,var(--blanco) 0%,var(--hueso) 100%);
   display:flex;align-items:center;justify-content:center;
 }
-.panel-deco svg{width:62%;opacity:.55}
+.panel-deco img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* galería */
+.galeria{background:var(--hueso)}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+.g{margin:0;border-radius:18px;overflow:hidden;border:1px solid var(--linea);background:var(--hueso);position:relative;aspect-ratio:1/1}
+.g img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.22,.7,.28,1)}
+.g:hover img{transform:scale(1.045)}
+.g-feature{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+.horario .h b{text-align:right}
 
 /* opiniones */
 .opiniones{background:var(--hueso)}
@@ -271,6 +288,8 @@ p,li,td,th,h1,h2,h3,h4,a,input,select,textarea{overflow-wrap:anywhere}
   .rejilla{grid-template-columns:repeat(2,1fr)}
   .rej-op{grid-template-columns:1fr}
   .panel-deco{aspect-ratio:16/11;max-width:520px}
+  .gal{grid-template-columns:repeat(2,1fr);gap:14px}
+  .g-feature{grid-column:span 2;grid-row:span 1;aspect-ratio:16/11}
 }
 @media (max-width:760px){
   body{font-size:16px;line-height:1.7}
@@ -286,7 +305,7 @@ p,li,td,th,h1,h2,h3,h4,a,input,select,textarea{overflow-wrap:anywhere}
   .datos .c{border-right:none;border-bottom:1px solid rgba(245,239,233,.14);padding:32px 20px}
   .datos .c:last-child{border-bottom:none}
   .fila{grid-template-columns:1fr}
-  .hero{padding:126px 0 76px;min-height:auto}
+  .hero{padding:126px 0 76px;min-height:auto;background:linear-gradient(180deg, rgba(250,247,244,.95) 0%, rgba(250,247,244,.85) 55%, rgba(250,247,244,.95) 100%), url('img/hero.jpg') center 30%/cover no-repeat, linear-gradient(180deg,var(--marfil) 0%,var(--hueso) 100%)}
   .hero-txt{font-size:1rem}
   .hero-btns .btn{flex:1 1 100%;justify-content:center}
   .hero-mini{gap:8px 18px;font-size:.72rem}
@@ -296,6 +315,10 @@ p,li,td,th,h1,h2,h3,h4,a,input,select,textarea{overflow-wrap:anywhere}
   .wsp span{display:none}
   .wsp svg{width:22px;height:22px}
   footer{padding:46px 0 36px}
+}
+@media (max-width:620px){
+  .rejilla{grid-template-columns:1fr}
+  .gal{gap:12px}
 }
 </style>
 </head>
@@ -330,7 +353,6 @@ p,li,td,th,h1,h2,h3,h4,a,input,select,textarea{overflow-wrap:anywhere}
   <section class="hero">
     <div class="hero-deco" aria-hidden="true">
       <svg class="deco-aro" viewBox="0 0 400 400"><circle cx="200" cy="200" r="150" fill="none" stroke="#c98b8b" stroke-width=".7"/><circle cx="200" cy="200" r="108" fill="none" stroke="#c9a227" stroke-width=".6"/><circle cx="200" cy="200" r="66" fill="none" stroke="#c98b8b" stroke-width=".5"/></svg>
-      <svg class="deco-hoja" viewBox="0 0 300 300"><path d="M20 280C70 200 130 120 260 30" fill="none" stroke="#b8797a" stroke-width=".8"/><path d="M120 175c-22-30-24-56-16-78 26 10 44 32 46 62z" fill="none" stroke="#b8797a" stroke-width=".7"/><path d="M175 120c-16-32-12-58 2-78 24 14 38 40 34 70z" fill="none" stroke="#c9a227" stroke-width=".7"/><path d="M80 235c-26-24-34-50-32-74 28 6 50 24 58 52z" fill="none" stroke="#c9a227" stroke-width=".7"/></svg>
     </div>
     <div class="wrap">
       <p class="eyebrow ap">Centro de estética</p>
@@ -447,14 +469,8 @@ p,li,td,th,h1,h2,h3,h4,a,input,select,textarea{overflow-wrap:anywhere}
   <section class="centro" id="centro">
     <div class="wrap">
       <div class="bloque">
-        <div class="panel-deco ap" aria-hidden="true">
-          <svg viewBox="0 0 300 300">
-            <circle cx="150" cy="150" r="104" fill="none" stroke="#b8797a" stroke-width=".7"/>
-            <circle cx="150" cy="150" r="70" fill="none" stroke="#c9a227" stroke-width=".6"/>
-            <path d="M150 46c-30 26-46 60-46 104s16 78 46 104" fill="none" stroke="#b8797a" stroke-width=".8"/>
-            <path d="M150 46c30 26 46 60 46 104s-16 78-46 104" fill="none" stroke="#c9a227" stroke-width=".8"/>
-            <path d="M56 150h188" fill="none" stroke="#c98b8b" stroke-width=".6"/>
-          </svg>
+        <div class="panel-deco ap">
+          <img src="img/centro.jpg" alt="Cabina de tratamientos de Marlystetic, con camilla y aparatología" loading="lazy" decoding="async" width="900" height="1125">
         </div>
         <div class="ap">
           <p class="eyebrow">El centro</p>
@@ -468,6 +484,27 @@ p,li,td,th,h1,h2,h3,h4,a,input,select,textarea{overflow-wrap:anywhere}
             <li><b>Más de 12 años</b> acompañando a vecinas y vecinos del barrio, con clientes que repiten y traen a los suyos.</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="galeria" id="espacio">
+    <div class="wrap">
+      <div class="narrow center ap">
+        <p class="eyebrow">Nuestro espacio</p>
+        <h2>El centro por dentro</h2>
+        <div class="rule"></div>
+        <p class="lead">Fotos reales del centro: la recepción, las cabinas y algunos de los tratamientos que hacemos cada día.</p>
+      </div>
+      <div class="gal">
+        <figure class="g g-feature ap">
+          <img src="img/gal-bodegon.jpg" alt="Ambientación de Marlystetic con velas, toallas y productos del centro" loading="lazy" decoding="async" width="1300" height="731">
+        </figure>
+        <figure class="g ap"><img src="img/gal-recepcion.jpg" alt="Recepción del centro de estética Marlystetic en Alcalá de Henares" loading="lazy" decoding="async" width="900" height="900"></figure>
+        <figure class="g ap"><img src="img/gal-facial.jpg" alt="Tratamiento facial con aparatología en Marlystetic" loading="lazy" decoding="async" width="900" height="900"></figure>
+        <figure class="g ap"><img src="img/gal-corporal.jpg" alt="Tratamiento corporal en Marlystetic" loading="lazy" decoding="async" width="900" height="900"></figure>
+        <figure class="g ap"><img src="img/gal-carbon.jpg" alt="Limpieza facial con carbón en Marlystetic" loading="lazy" decoding="async" width="900" height="900"></figure>
       </div>
     </div>
   </section>
@@ -534,7 +571,8 @@ p,li,td,th,h1,h2,h3,h4,a,input,select,textarea{overflow-wrap:anywhere}
               </div>
             </div>
             <label for="servicio">Qué te apetece</label>
-            <select id="servicio" name="servicio">
+            <select id="servicio" name="servicio" required>
+              <option value="" selected disabled>Elige un servicio</option>
               <option>Masaje postquirúrgico</option>
               <option>Maderoterapia</option>
               <option>Presoterapia</option>
@@ -609,7 +647,7 @@ p,li,td,th,h1,h2,h3,h4,a,input,select,textarea{overflow-wrap:anywhere}
           <div class="horario">
             <h4>Horario</h4>
             <div class="h"><span>Lunes</span><b>Cerrado</b></div>
-            <div class="h"><span>Martes a viernes</span><b>10:00 a 13:30</b></div>
+            <div class="h"><span>Martes a viernes</span><b>10:00 - 13:30 y 16:00 - 20:30</b></div>
             <div class="h"><span>Sábado</span><b>10:00 a 15:00</b></div>
             <div class="h"><span>Domingo</span><b>Cerrado</b></div>
           </div>
@@ -660,6 +698,12 @@ p,li,td,th,h1,h2,h3,h4,a,input,select,textarea{overflow-wrap:anywhere}
   "telephone":["+34625288970","+34911543181"],
   "email":"marlistetic@hotmail.es",
   "url":"https://neolabs-clientes.github.io/marlystetic/",
+  "image":"https://neolabs-clientes.github.io/marlystetic/img/og.jpg",
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"13:30"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday"],"opens":"16:00","closes":"20:30"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"15:00"}
+  ],
   "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"130"},
   "sameAs":["https://www.facebook.com/centroesteticomarlystetic/","https://www.fresha.com/es/lvp/marlystetic-calle-lope-de-rueda-alcala-de-henares-Bo0aVJ"]
 }
